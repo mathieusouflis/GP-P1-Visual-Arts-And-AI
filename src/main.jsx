@@ -5,11 +5,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
 import Homepage from "./Pages/homepage.jsx";
+import Benchmark from "./Pages/Benchmark.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Homepage />,
+  },
+  {
+    path: "/benchmark",
+    element: <Benchmark />,
   },
 ]);
 
