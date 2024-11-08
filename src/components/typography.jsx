@@ -1,6 +1,6 @@
 export const Clasical = ({ className, children, ...props }) => {
   return (
-    <p className={`text-sm uppercase ${className}`} {...props}>
+    <p className={`text-[14px] uppercase ${className}`} {...props}>
       {children}
     </p>
   );
