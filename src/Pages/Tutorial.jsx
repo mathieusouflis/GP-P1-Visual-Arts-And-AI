@@ -134,7 +134,7 @@ const Tutorial = () => {
             <div
               className={`flex flex-col gap-2 self-end bg-black bg-opacity-45 p-1 max-w-80 transition-all opacity-1 ${videoHidden ? "opacity-0" : ""}`}
             >
-              {text[step].map((value, index) => (
+              {text[step]?.map((value, index) => (
                 <>
                   <Clasical key={index} className="text-white">
                     {value}
