@@ -7,6 +7,7 @@ import "./index.css";
 import Homepage from "./Pages/homepage.jsx";
 import Benchmark from "./Pages/Benchmark.jsx";
 import Tutorial from "./Pages/Tutorial.jsx";
+import Exploration from "./Pages/Exploration.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/tutorial",
     element: <Tutorial />,
+  },
+  {
+    path: "/exploration",
+    element: <Exploration />,
   },
 ]);
 
