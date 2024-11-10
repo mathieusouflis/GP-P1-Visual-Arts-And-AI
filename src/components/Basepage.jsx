@@ -4,13 +4,13 @@ import { Title } from "./typography";
 const BasePage = ({ title, nav, blur = false, children }) => {
   const getPathFromLetter = (letter) => {
     return letter === "B"
-      ? "benchmark"
+      ? "/benchmark"
       : letter === "R"
-        ? "research"
+        ? "/research"
         : letter === "T"
-          ? "tutorial"
+          ? "/tutorial"
           : letter === "E"
-            ? "exploration"
+            ? "/exploration"
             : "";
   };
 
@@ -21,13 +21,13 @@ const BasePage = ({ title, nav, blur = false, children }) => {
       >
         <Title>{title}</Title>
         <nav className="flex row gap-4">
-          <Link path={getPathFromLetter(nav[0])} relative="path">
+          <Link to={getPathFromLetter(nav[0])} relative="path">
             <Title>{nav[0]}</Title>
           </Link>
-          <Link path={getPathFromLetter(nav[1])} relative="path">
+          <Link to={getPathFromLetter(nav[1])} relative="path">
             <Title>{nav[1]}</Title>
           </Link>
-          <Link path={getPathFromLetter(nav[2])} relative="path">
+          <Link to={getPathFromLetter(nav[2])} relative="path">
             <Title>{nav[2]}</Title>
           </Link>
         </nav>
