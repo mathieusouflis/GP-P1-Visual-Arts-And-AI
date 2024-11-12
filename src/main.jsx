@@ -6,6 +6,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Homepage from "./Pages/homepage.jsx";
 import Benchmark from "./Pages/Benchmark.jsx";
+import Tutorial from "./Pages/Tutorial.jsx";
+import Exploration from "./Pages/Exploration.jsx";
+import Research from "./Pages/Research.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +18,18 @@ const router = createBrowserRouter([
   {
     path: "/benchmark",
     element: <Benchmark />,
+  },
+  {
+    path: "/tutorial",
+    element: <Tutorial />,
+  },
+  {
+    path: "/exploration",
+    element: <Exploration />,
+  },
+  {
+    path: "/research",
+    element: <Research />,
   },
 ]);
 

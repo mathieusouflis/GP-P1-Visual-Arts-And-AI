@@ -1,18 +1,20 @@
-export const Clasical = ({ className, children, ...props }) => {
+export const Clasical = ({ blur = false, className, children, ...props }) => {
   return (
-    <p className={`text-sm uppercase ${className}`} {...props}>
+    <p
+      className={`text-[14px] uppercase transition-all ${blur ? "blur-sm" : ""} ${className}`}
+      {...props}
+    >
       {children}
     </p>
   );
 };
 
-// export const ClasicalBold = ({ children }) => {
-//   return <p className="text-sm uppercase font-bold">{children}</p>;
-// };
-
-export const Title = ({ className, children, ...props }) => {
+export const Title = ({ blur = false, className, children, ...props }) => {
   return (
-    <h1 className={`text-9xl uppercase font-black ${className}`} {...props}>
+    <h1
+      className={`text-9xl uppercase font-black transition-all ${blur ? "blur-sm" : ""} ${className}`}
+      {...props}
+    >
       {children}
     </h1>
   );

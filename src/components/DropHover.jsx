@@ -19,11 +19,9 @@ const DropHover = ({
         <span className="absolute top-10 w-96 flex flex-col gap-2">
           {description.map((value, index) => (
             <>
-              {/* className="normal-case" */}
               <Clasical key={index}>{value}</Clasical>
             </>
           ))}
-          {/* <Clasical>{description}</Clasical> */}
         </span>
       </span>
       <Clasical

@@ -1,45 +1,33 @@
 import { Link } from "react-router-dom";
 import { Title } from "./typography";
+import { generateAfterSlide } from "../utils/functions.js";
+import classNames from "classnames";
 
-const BasePage = ({ title, nav, blur = false, children }) => {
-  const getPathFromLetter = (letter) => {
-    return letter === "B"
-      ? "benchmark"
-      : letter === "R"
-        ? "research"
-        : letter === "T"
-          ? "tutorial"
-          : letter === "E"
-            ? "exploration"
-            : "";
-  };
-
+const BasePage = ({ title, blur = false, scrollable = false, children }) => {
   return (
-    <div className="w-screen h-screen flex flex-col px-4 overflow-hidden">
-      <div
-        className={`transition-all flex flex-row justify-between ${blur ? "blur-sm" : ""}`}
-      >
-        <Title>{title}</Title>
-        <nav className="flex row gap-4">
-          <Link path={getPathFromLetter(nav[0])} relative="path">
-            <Title>{nav[0]}</Title>
-          </Link>
-          <Link path={getPathFromLetter(nav[1])} relative="path">
-            <Title>{nav[1]}</Title>
-          </Link>
-          <Link path={getPathFromLetter(nav[2])} relative="path">
-            <Title>{nav[2]}</Title>
+    <div
+      className={classNames("w-full min-h-screen h-screen flex flex-col px-4", {
+        "overflow-visible": scrollable,
+        "overflow-hidden": !scrollable,
+      })}
+    >
+      <div className={`flex flex-row justify-between `}>
+        <Title className={`transition-all ${blur ? "blur-sm" : ""}`}>
+          {title}
+        </Title>
+        <nav
+          className={`flex flex-row gap-4 fixed top-0 right-4 transition-all ${blur ? "blur-sm" : ""}`}
+        >
+          <Link to="/" relative="path" className="overflow-hidden">
+            <Title
+              className={"after:content-['HOME']" + generateAfterSlide("HOME")}
+            >
+              HOME
+            </Title>
           </Link>
         </nav>
       </div>
-      <div className="h-full">{children}</div>
-      <footer
-        className={`flex w-full justify-end h-fit ${blur ? "blur-sm" : ""}`}
-      >
-        <Link to="/" relative="path">
-          <Title>HOME</Title>
-        </Link>
-      </footer>
+      <div className="block h-fit min-h-[calc(100vh-8rem)]">{children}</div>
     </div>
   );
 };
