@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BasePage from "../components/Basepage";
 import DropHover from "../components/DropHover";
+import DropHoverLine from "../components/DropHoverLine";
 
 const Benchmark = () => {
   const [selected, setSelected] = useState("");
@@ -17,13 +18,9 @@ const Benchmark = () => {
 
   return (
     <>
-      <BasePage
-        title={"Benchmark"}
-        nav={["R", "T", "E"]}
-        blur={selected !== "" ? true : false}
-      >
+      <BasePage title={"Benchmark"} blur={selected !== "" ? true : false}>
         <div className="h-full w-full flex flex-col gap-32 justify-center">
-          <div className="flex flex-row w-full justify-evenly items-center">
+          <DropHoverLine>
             <DropHover
               title="Night Cafe"
               description={[
@@ -57,8 +54,8 @@ const Benchmark = () => {
               className={`transition-all  ${selected === "" || selected === "artbreeder" ? "opacity-100" : "opacity-0"}`}
               {...props}
             />
-          </div>
-          <div className="flex flex-row w-full justify-evenly items-center">
+          </DropHoverLine>
+          <DropHoverLine>
             <DropHover
               title="Runway"
               description={[
@@ -82,7 +79,7 @@ const Benchmark = () => {
               className={`z-10 transition-all  ${selected === "" || selected === "starryia" ? "opacity-100" : "opacity-0"}`}
               {...props}
             />
-          </div>
+          </DropHoverLine>
         </div>
       </BasePage>
     </>
