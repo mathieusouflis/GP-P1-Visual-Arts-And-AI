@@ -75,11 +75,13 @@ const Research = () => {
                   {...props}
                 />
                 <DropHover
-                  title={"Prompt Negatif"}
+                  title={"Limites"}
                   description={[
-                    "Éléments à éviter : Spécifiez les éléments que vous ne voulez pas voir dans l'image. Ces exclusions permettent de clarifier ce qui pourrait distraire ou altérer votre vision.",
+                    "Ce développement technologique a été créé a l’origine affin aider l’Homme au quotidien, et lui faciliter la vie.",
+                    "Malheureusement cela apportera son lot de points négatifs ; par exemple, plusieurs emplois seront supprimés dû à l’IA. De plus, le fait qu’elle ne puisse apprendre  qu’à partir d’information fournies nous fait prendre conscience de ses limites.",
+                    "L’intelligence artificielle à révolutionné la façon dont les humains travaillent, malgré son principale point faible qui réside dans son incapacité à expliquer clairement pourquoi il est arrivé à ces conclusions.",
                   ]}
-                  className={`transition-all  ${selected === "" || selected === "promptnegatif" ? "opacity-100" : "opacity-0"}`}
+                  className={`transition-all  ${selected === "" || selected === "limites" ? "opacity-100" : "opacity-0"}`}
                   {...props}
                 />
               </DropHoverLine>
