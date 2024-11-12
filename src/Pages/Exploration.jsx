@@ -155,11 +155,7 @@ const Exploration = () => {
         }
         className={`-z-50 fixed right-0 bottom-0 w-screen h-screen object-cover transition-all duration-300 opacity-1 ${activeImage === null ? "hidden" : ""} ${imageHidden ? "opacity-0" : ""} `}
       />
-      <BasePage
-        title={"Exploration"}
-        nav={["B", "R", "T"]}
-        blur={activeImage !== null}
-      >
+      <BasePage title={"Exploration"} blur={activeImage !== null}>
         <div className="w-full flex flex-col mt-40">
           {imagesData.map((data, index) => (
             <Line
