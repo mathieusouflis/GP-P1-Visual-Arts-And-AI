@@ -120,7 +120,7 @@ const Tutorial = () => {
         }
         className={`-z-50 fixed ring-0 bottom-0 w-screen h-screen object-cover transition-all duration-300 opacity-1 ${videoHidden ? "opacity-0" : ""} `}
       />
-      <BasePage title={"Tutorial"} nav={["E", "B", "T"]} blur={false}>
+      <BasePage title={"Tutorial"} blur={false}>
         <div className="flex flex-row w-full h-full">
           <div
             className="flex h-full w-full"
@@ -132,7 +132,7 @@ const Tutorial = () => {
             }}
           >
             <div
-              className={`flex flex-col gap-2 self-end bg-black bg-opacity-45 p-1 max-w-80 transition-all opacity-1 ${videoHidden ? "opacity-0" : ""}`}
+              className={`flex flex-col gap-2 self-end bg-black bg-opacity-45 p-1 max-w-80 transition-all opacity-1 mb-4 ${videoHidden ? "opacity-0" : ""}`}
             >
               {text[step]?.map((value, index) => (
                 <>
@@ -144,13 +144,13 @@ const Tutorial = () => {
             </div>
           </div>
           <div className="flex flex-col gap-10 h-full justify-center items-end">
-            <Step name="Modèle" close={step === 0 ? false : true} />
-            <Step name="Prompt" close={step === 1 ? false : true} />
-            <Step name="Style" close={step === 2 ? false : true} />
-            <Step name="Filtres" close={step === 3 ? false : true} />
-            <Step name="Disposition" close={step === 4 ? false : true} />
-            <Step name="Remix" close={step === 5 ? false : true} />
-            <Step name="Upscale" close={step === 6 ? false : true} />
+            <Step name="Modèle" close={step !== 0} />
+            <Step name="Prompt" close={step !== 1} />
+            <Step name="Style" close={step !== 2} />
+            <Step name="Filtres" close={step !== 3} />
+            <Step name="Disposition" close={step !== 4} />
+            <Step name="Remix" close={step !== 5} />
+            <Step name="Upscale" close={step !== 6} />
           </div>
         </div>
       </BasePage>
