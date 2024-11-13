@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+
 import { Title } from "../components/typography";
+
 import { generateAfterSlide } from "../utils/functions";
 
 const Homepage = () => {

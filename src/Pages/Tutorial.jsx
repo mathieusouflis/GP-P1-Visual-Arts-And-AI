@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
+
 import BasePage from "../components/Basepage";
-import modelVideo from "../assets/videos/MODEL.mp4";
-import promptVideo from "../assets/videos/PROMPT.mp4";
-import styleVideo from "../assets/videos/STYLES.mp4";
-import settingsVideo from "../assets/videos/SETTINGS.mp4";
-import createVideo from "../assets/videos/CREATE.mp4";
-import upscaleVideo from "../assets/videos/UPSCALE.mp4";
-import modelAudio from "../assets/audios/MODEL.mp3";
-import promptAudio from "../assets/audios/PROMPT.mp3";
-import styleAudio from "../assets/audios/STYLES.mp3";
-import settingsAudio from "../assets/audios/SETTINGS.mp3";
-import createAudio from "../assets/audios/CREATE.mp3";
-import upscaleAudio from "../assets/audios/UPSCALE.mp3";
+
+import modelVideo from "../assets/tutorial/MODEL.mp4";
+import promptVideo from "../assets/tutorial/PROMPT.mp4";
+import styleVideo from "../assets/tutorial/STYLES.mp4";
+import settingsVideo from "../assets/tutorial/SETTINGS.mp4";
+import createVideo from "../assets/tutorial/CREATE.mp4";
+import upscaleVideo from "../assets/tutorial/UPSCALE.mp4";
+
+import modelAudio from "../assets/sounds/MODEL.mp3";
+import promptAudio from "../assets/sounds/PROMPT.mp3";
+import styleAudio from "../assets/sounds/STYLES.mp3";
+import settingsAudio from "../assets/sounds/SETTINGS.mp3";
+import createAudio from "../assets/sounds/CREATE.mp3";
+import upscaleAudio from "../assets/sounds/UPSCALE.mp3";
 
 import { Clasical } from "../components/typography";
 const sleep = (miliseconds) =>

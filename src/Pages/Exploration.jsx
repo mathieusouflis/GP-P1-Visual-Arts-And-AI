@@ -1,12 +1,13 @@
 import { useState } from "react";
-import BasePage from "../components/Basepage";
 
-import image1 from "../assets/images/Image 1.png";
-import image2 from "../assets/images/Image 2.png";
-import image3 from "../assets/images/Image 3.png";
-import image4 from "../assets/images/Image 4.png";
-import image5 from "../assets/images/Image 5.png";
+import BasePage from "../components/Basepage";
 import { Clasical } from "../components/typography";
+
+import image1 from "../assets/pictures/Image 1.png";
+import image2 from "../assets/pictures/Image 2.png";
+import image3 from "../assets/pictures/Image 3.png";
+import image4 from "../assets/pictures/Image 4.png";
+import image5 from "../assets/pictures/Image 5.png";
 
 const Line = ({
   id,

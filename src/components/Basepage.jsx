@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Title } from "./typography";
-import { generateAfterSlide } from "../utils/functions.js";
 import classNames from "classnames";
+
+import { Title } from "./typography";
+
+import { generateAfterSlide } from "../utils/functions.js";
 
 const BasePage = ({ title, blur = false, scrollable = false, children }) => {
   return (

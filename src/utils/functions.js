@@ -8,6 +8,7 @@ const generateAfterSlide = (up = true) => {
       "after:top-28 hover:-translate-y-28": !up,
     },
   );
+
   return classs;
 };
 
