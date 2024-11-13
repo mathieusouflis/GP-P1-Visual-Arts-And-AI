@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
 import BasePage from "../components/Basepage";
-import modelVideo from "../assets/videos/rain.mp4";
-import promptVideo from "../assets/videos/rain2.mp4";
-import styleVideo from "../assets/videos/rain.mp4";
-import filtersVideo from "../assets/videos/rain2.mp4";
-import dispositionVideo from "../assets/videos/rain.mp4";
-import remixVideo from "../assets/videos/rain2.mp4";
-import upscaleVideo from "../assets/videos/rain.mp4";
-import modelAudio from "../assets/audios/modelAudio.mp3";
-import promptAudio from "../assets/audios/promptAudio.mp3";
-import styleAudio from "../assets/audios/styleAudio.mp3";
-import filtersAudio from "../assets/audios/filtersAudio.mp3";
-import dispositionAudio from "../assets/audios/dispositionAudio.mp3";
-import upscaleAudio from "../assets/audios/upscaleAudio.mp3";
+import modelVideo from "../assets/videos/MODEL.mp4";
+import promptVideo from "../assets/videos/PROMPT.mp4";
+import styleVideo from "../assets/videos/STYLES.mp4";
+import settingsVideo from "../assets/videos/SETTINGS.mp4";
+import createVideo from "../assets/videos/CREATE.mp4";
+import upscaleVideo from "../assets/videos/UPSCALE.mp4";
+import modelAudio from "../assets/audios/MODEL.mp3";
+import promptAudio from "../assets/audios/PROMPT.mp3";
+import styleAudio from "../assets/audios/STYLES.mp3";
+import settingsAudio from "../assets/audios/SETTINGS.mp3";
+import createAudio from "../assets/audios/CREATE.mp3";
+import upscaleAudio from "../assets/audios/UPSCALE.mp3";
 
 import { Clasical } from "../components/typography";
 const sleep = (miliseconds) =>
@@ -38,28 +37,32 @@ const Tutorial = () => {
 
   const text = [
     [
-      "Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quas pariatur et vero. Modi veniam fugiat, dolores in unde nemo.",
+      "Premièrement, nous allons choisir un modèle qui sera la base de notre inspiration, inspirera son univers.",
+      "Une fois fait, validez votre choix en appuyant sur le bouton marqué 'done'.",
     ],
     [
-      "Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quas pariatur et vero. Modi veniam fugiat, dolores in unde nemo.",
+      "Une fois le modèle sélectionné, il faudra écrire votre prompt sur la barre dédiée.",
+      "Votre prompt doit, dans l'idéal, contenir des détails pour que l'image soit plus précise.",
     ],
     [
-      "Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quas pariatur et vero. Modi veniam fugiat, dolores in unde nemo.",
+      "Vous pouvez sélectionner un style qui apportera des précisions sur le style de l'image générée.",
+      "N'oubliez pas d'appuyer sur 'done' pour valider votre sélection.",
     ],
     [
-      "Lorem ipsum dolor sit amet.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quas pariatur et vero. Modi veniam fugiat, dolores in unde nemo.",
+      "Vous pourrez aussi régler certains paramètres tels que le nombre d'images générées, la durée de la génération ainsi que le format de l'image.",
+    ],
+    ["Appuyez sur 'CREATE' pour générer l'image voulue ! 🎉"],
+    [
+      "L'image to image est une manière de générer des images à l'aide d'une création de référence et d'un prompt (optionnel mais conseillé) sur lesquels s'appuyer.",
+      "Vous pouvez aussi upscaler une image afin d'améliorer sa résolution et/ou changer le format de celle-ci.",
     ],
   ];
 
   const modelAudioo = new Audio(modelAudio);
   const promptAudioo = new Audio(promptAudio);
   const styleAudioo = new Audio(styleAudio);
-  const filtersAudioo = new Audio(filtersAudio);
-  const dispositionAudioo = new Audio(dispositionAudio);
+  const settingsAudioo = new Audio(settingsAudio);
+  const createAudioo = new Audio(createAudio);
   const upscaleAudioo = new Audio(upscaleAudio);
 
   useEffect(() => {
@@ -67,10 +70,9 @@ const Tutorial = () => {
       0: modelAudioo,
       1: promptAudioo,
       2: styleAudioo,
-      3: filtersAudioo,
-      4: dispositionAudioo,
-      5: modelAudioo,
-      6: upscaleAudioo,
+      3: settingsAudioo,
+      4: createAudioo,
+      5: upscaleAudioo,
     };
 
     const audio = audioMap[step];
@@ -96,30 +98,30 @@ const Tutorial = () => {
 
   return (
     <>
-      <video
-        autoPlay
-        muted
-        loop
-        id="myVideo"
-        src={
-          step === 0
-            ? modelVideo
-            : step === 1
-              ? promptVideo
-              : step === 2
-                ? styleVideo
-                : step === 3
-                  ? filtersVideo
-                  : step === 4
-                    ? dispositionVideo
-                    : step === 5
-                      ? remixVideo
-                      : step === 6
+      <div className="-z-50 fixed w-screen h-screen flex items-center justify-center">
+        <video
+          autoPlay
+          muted
+          loop
+          id="myVideo"
+          src={
+            step === 0
+              ? modelVideo
+              : step === 1
+                ? promptVideo
+                : step === 2
+                  ? styleVideo
+                  : step === 3
+                    ? settingsVideo
+                    : step === 4
+                      ? createVideo
+                      : step === 5
                         ? upscaleVideo
                         : ""
-        }
-        className={`-z-50 fixed ring-0 bottom-0 w-screen h-screen object-cover transition-all duration-300 opacity-1 ${videoHidden ? "opacity-0" : ""} `}
-      />
+          }
+          className={` w-[64vw] h-[64vh] rounded-md object-cover transition-all duration-300 opacity-1 ${videoHidden ? "opacity-0" : ""} `}
+        />
+      </div>
       <BasePage title={"Tutorial"} blur={false}>
         <div className="flex flex-row w-full h-full">
           <div
@@ -127,12 +129,12 @@ const Tutorial = () => {
             onClick={async () => {
               setVideoHidden(true);
               await sleep(300);
-              setStep((old) => (old === 6 ? 0 : (old += 1)));
+              setStep((old) => (old === 5 ? 0 : (old += 1)));
               setVideoHidden(false);
             }}
           >
             <div
-              className={`flex flex-col gap-2 self-end bg-black bg-opacity-45 p-1 max-w-80 transition-all opacity-1 mb-4 ${videoHidden ? "opacity-0" : ""}`}
+              className={`flex flex-col gap-2 self-end bg-black bg-opacity-55 p-1 max-w-80 transition-all opacity-1 mb-4 ${videoHidden ? "opacity-0" : ""}`}
             >
               {text[step]?.map((value, index) => (
                 <>
@@ -147,10 +149,9 @@ const Tutorial = () => {
             <Step name="Modèle" close={step !== 0} />
             <Step name="Prompt" close={step !== 1} />
             <Step name="Style" close={step !== 2} />
-            <Step name="Filtres" close={step !== 3} />
-            <Step name="Disposition" close={step !== 4} />
-            <Step name="Remix" close={step !== 5} />
-            <Step name="Upscale" close={step !== 6} />
+            <Step name="Settings" close={step !== 3} />
+            <Step name="Create" close={step !== 4} />
+            <Step name="Upscale" close={step !== 5} />
           </div>
         </div>
       </BasePage>
