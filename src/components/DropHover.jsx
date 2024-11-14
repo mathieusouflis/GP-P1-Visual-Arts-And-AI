@@ -17,7 +17,7 @@ const DropHover = ({
       <span
         className={`cursor-default transition-all ${selected ? "opacity-100" : "opacity-0"} relative  w-0 h-0`}
       >
-        <span className="absolute top-10 w-96 flex flex-col gap-2">
+        <span className="absolute top-10 w-[28rem] flex flex-col gap-2">
           {description.map((value, index) => (
             <>
               <Clasical key={index}>{value}</Clasical>
