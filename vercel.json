@@ -1,0 +1,9 @@
+{
+  "routes": [
+    { "src": "/benchmark", "dest": "/" },
+    { "src": "/tutorial", "dest": "/" },
+    { "src": "/exploration", "dest": "/" },
+    { "src": "/research", "dest": "/" },
+    { "src": "/", "dest": "/" }
+  ]
+}
