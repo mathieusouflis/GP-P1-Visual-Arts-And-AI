@@ -19,7 +19,11 @@ const Benchmark = () => {
 
   return (
     <>
-      <BasePage title={"Benchmark"} blur={selected !== "" ? true : false}>
+      <BasePage
+        title={"Benchmark"}
+        blur={selected !== "" ? true : false}
+        scrollable={true}
+      >
         <div className="h-full w-full flex flex-col gap-32 justify-center">
           <DropHoverLine>
             <DropHover
