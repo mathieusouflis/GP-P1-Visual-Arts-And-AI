@@ -126,16 +126,16 @@ const Tutorial = () => {
         />
       </div>
       <BasePage title={"Tutorial"} blur={false}>
-        <div className="flex flex-row w-full h-full">
-          <div
-            className="flex h-full w-full"
-            onClick={async () => {
-              setVideoHidden(true);
-              await sleep(300);
-              setStep((old) => (old === 5 ? 0 : (old += 1)));
-              setVideoHidden(false);
-            }}
-          >
+        <div
+          className="flex flex-row w-full h-full"
+          onClick={async () => {
+            setVideoHidden(true);
+            await sleep(300);
+            setStep((old) => (old === 5 ? 0 : (old += 1)));
+            setVideoHidden(false);
+          }}
+        >
+          <div className="flex h-full w-full">
             <div
               className={`flex flex-col gap-2 self-end bg-black bg-opacity-55 p-1 max-w-80 transition-all opacity-1 mb-4 ${videoHidden ? "opacity-0" : ""}`}
             >
