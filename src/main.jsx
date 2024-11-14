@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { ReactLenis } from "lenis/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Homepage from "./Pages/homepage.jsx";
+import Homepage from "./Pages/Homepage.jsx";
 import Benchmark from "./Pages/Benchmark.jsx";
 import Tutorial from "./Pages/Tutorial.jsx";
 import Exploration from "./Pages/Exploration.jsx";
