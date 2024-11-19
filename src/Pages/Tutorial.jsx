@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import BasePage from "../components/Basepage";
 
@@ -38,6 +38,20 @@ const Tutorial = () => {
   const [step, setStep] = useState(0);
   const [videoHidden, setVideoHidden] = useState(false);
 
+  const handleWheel = (event) => {
+    const direction = event.deltaY > 0 ? 1 : -1;
+    setStep((old) => old + direction);
+  };
+  useEffect(() => {
+    const scrollEvent = (e) => handleWheel(e);
+
+    window.addEventListener("wheel", scrollEvent);
+
+    return () => {
+      window.removeEventListener("wheel", scrollEvent);
+    };
+  }, []);
+
   const text = [
     [
       "Premièrement, nous allons choisir un modèle qui sera la base de notre inspiration, inspirera son univers.",
@@ -69,6 +83,11 @@ const Tutorial = () => {
   const upscaleAudioo = new Audio(upscaleAudio);
 
   useEffect(() => {
+    if (step < 0) {
+      setStep(0);
+    } else if (step > 5) {
+      setStep(5);
+    }
     const audioMap = {
       0: modelAudioo,
       1: promptAudioo,
@@ -101,6 +120,9 @@ const Tutorial = () => {
 
   return (
     <>
+      <Clasical className={"absolute left-1/2 top-10"}>
+        Scrollez ou cliquez
+      </Clasical>
       <div className="-z-50 fixed w-screen h-screen flex items-center justify-center">
         <video
           autoPlay

@@ -66,8 +66,8 @@ const Benchmark = () => {
               description={[
                 "Cette ia reste bonne dans l’ensemble, mais de notre expérience, il ne fait clairement pas partie des têtes d’affiche.",
                 "En effet la prise en main reste assez compliquée, mais peut avoir un bon potentiel avec une approche sérieuse travaillée.",
-                "Le gros point faible réside dans le fait que la génération se fait uniquement grâce au système du image to image, sans pouvoir générer uniquement grâce à un prompt.",
-                "Enfin son coût ne l’avantage dans le rapport qualité prix.",
+                "Elle est capable d’améliorer les images grâce à des apports qualitatifs (par exemple étendre une image).",
+                "Le gros point faible réside dans le fait que la génération se base beaucoup sur le image to image, donc moins efficace dans les prompts.",
               ]}
               className={`z-10 transition-all  ${selected === "" || selected === "runway" ? "opacity-100" : "opacity-0"}`}
               {...props}

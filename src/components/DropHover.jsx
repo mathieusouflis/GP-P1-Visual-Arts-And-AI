@@ -8,7 +8,6 @@ const DropHover = ({
   mouseEnterEvent,
   mouseLeaveEvent,
   className,
-  ...props
 }) => {
   const [selected, setSelected] = useState(false);
 

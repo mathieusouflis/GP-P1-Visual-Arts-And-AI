@@ -49,6 +49,7 @@ const Homepage = () => {
               Tutorial
             </Title>
           </Link>
+
           <Link
             className="relative overflow-hidden"
             to="/exploration"
@@ -56,11 +57,21 @@ const Homepage = () => {
           >
             <Title
               className={
-                "ml-20 after:content-['EXPLORATION']" +
+                "after:content-['EXPLORATION']" +
                 generateAfterSlide("EXPLORATION")
               }
             >
               Exploration
+            </Title>
+          </Link>
+          <Link className="relative overflow-hidden" to="/team" relative="path">
+            <Title
+              className={
+                "ml-20 after:content-['TEAM-MEMBERS']" +
+                generateAfterSlide("TEAM-MEMBERS")
+              }
+            >
+              team-members
             </Title>
           </Link>
         </div>
