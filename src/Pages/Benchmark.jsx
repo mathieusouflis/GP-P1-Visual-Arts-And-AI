@@ -75,11 +75,10 @@ const Benchmark = () => {
             <DropHover
               title="StarryIA"
               description={[
-                "Une IA avec du potentiel, car son fonctionnement est simple.",
-                "Sa force principale réside dans sa qualité de génération grâce au image to image.",
-                "Elle est capable d’améliorer les images grâce à des apports qualitatifs (par exemple étendre une image).",
-                "Cependant sans l’apport d’une autre image, la précision de sa génération reste floue et éloignées des attentes.",
-                "Ajouter à une limite de création niveau prix, elle a du mal à faire face à ses concurrentes.",
+                " Un site possédant une interface intuitive. Facile à utiliser pour les débutants comme pour les professionnels.",
+                "La personnalisation des créations, permet d’ajuster des paramètres pour obtenir des résultats uniques réalisant des  résultats artistiques de qualité.",
+                "Ses faiblesses résident dans la limitation des styles, elle offre moins de diversité dans les styles artistiques par rapport à certains concurrents.",
+                "En plus d’un coût potentiellement élevé, les images générées peuvent nécessiter plusieurs tentatives pour correspondre à l'attente.",
               ]}
               className={`z-10 transition-all  ${selected === "" || selected === "starryia" ? "opacity-100" : "opacity-0"}`}
               {...props}
