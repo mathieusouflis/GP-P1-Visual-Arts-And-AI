@@ -105,7 +105,7 @@ const Exploration = () => {
       id: "002",
       ia: "NightCafe",
       prompt:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet atque vero voluptates unde consequatur officia iure non sit saepe amet?",
+        "A futuristic office setting with a sleek, modern, cartoonish style featuring clean lines and vibrant neon colors. The desk is at the center of the scene, holding an Iron Man helmet and various tech gadgets, including a small retro television. Behind the desk, holographic blue screens display futuristic data and interface designs, creating a high-tech atmosphere. The room is illuminated by glowing pink and blue lights, adding a cyberpunk aesthetic. The environment includes shelves with plants and books, a colorful lamp, and a mixture of vintage and futuristic technology, all blending into a visually dynamic and detailed cartoonish design.",
       clicable: true,
       imageId: 2,
     },
