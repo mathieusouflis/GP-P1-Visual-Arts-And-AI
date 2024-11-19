@@ -4,6 +4,7 @@
     { "src": "/tutorial", "dest": "/" },
     { "src": "/exploration", "dest": "/" },
     { "src": "/research", "dest": "/" },
+    { "src": "/team", "dest": "/" },
     { "src": "/", "dest": "/" }
   ]
 }

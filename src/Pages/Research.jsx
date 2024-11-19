@@ -1,12 +1,73 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import BasePage from "../components/Basepage";
 import DropHover from "../components/DropHover";
 import DropHoverLine from "../components/DropHoverLine";
-import { Clasical, Title } from "../components/typography";
+import { Title } from "../components/typography";
+import Lenis from "lenis";
+import MindmapImage from "../assets/pictures/mindmap.png";
 
 const Research = () => {
   const [selected, setSelected] = useState("");
+
+  const sectionRefs = useRef([]);
+  const currentSectionIndex = useRef(0);
+  const isScrolling = useRef(false);
+  const lenis = useRef(null);
+
+  const scrollToSection = (index) => {
+    console.log(sectionRefs.current);
+    if (
+      index >= 0 &&
+      index < sectionRefs.current.length &&
+      sectionRefs.current[index]
+    ) {
+      isScrolling.current = true;
+
+      lenis.current.scrollTo(sectionRefs.current[index], {
+        offset: 0,
+        duration: 2.5,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+      });
+
+      setTimeout(() => {
+        isScrolling.current = false;
+      }, 1200);
+    }
+  };
+
+  const handleWheel = (event) => {
+    if (isScrolling.current) return;
+
+    const direction = event.deltaY > 0 ? 1 : -1;
+    const nextIndex = currentSectionIndex.current + direction;
+
+    if (nextIndex >= 0 && nextIndex < sectionRefs.current.length) {
+      currentSectionIndex.current = nextIndex;
+      scrollToSection(nextIndex);
+    }
+  };
+  useEffect(() => {
+    lenis.current = new Lenis({
+      duration: 2,
+      easing: (t) => t,
+      smoothWheel: false,
+    });
+
+    const lenisScroll = (e) => handleWheel(e);
+
+    window.addEventListener("wheel", lenisScroll);
+
+    function raf(time) {
+      lenis.current.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      window.removeEventListener("wheel", lenisScroll);
+    };
+  }, []);
 
   const mouseEnterEvent = (e) => {
     console.log(e.target.innerText.toLowerCase().replace(" ", ""));
@@ -20,13 +81,16 @@ const Research = () => {
 
   return (
     <>
-      <Clasical className={"absolute left-1/2 top-10"}>
-        Si le scroll marche pas, faut refresh
-      </Clasical>
+      <div ref={(el) => (sectionRefs.current[0] = el)}></div>
       <BasePage title="Research" scrollable={true} blur={selected !== ""}>
         <div className="flex flex-col gap-96">
-          <div className="min-h-[calc(100vh-8rem)] w-full flex flex-col">a</div>
-          <div className="h-screen flex flex-col w-full">
+          <div className="min-h-[calc(100vh-8rem)] w-full flex flex-col">
+            <img className="w-full h-full" src={MindmapImage} />
+          </div>
+          <div
+            ref={(el) => (sectionRefs.current[1] = el)}
+            className="h-screen flex flex-col w-full"
+          >
             <Title blur={selected !== ""} className={"text-3xl font-black"}>
               L'IA
             </Title>
@@ -88,10 +152,16 @@ const Research = () => {
               </DropHoverLine>
             </div>
           </div>
-          <div className="h-screen w-full flex justify-center items-center">
+          <div
+            ref={(el) => (sectionRefs.current[2] = el)}
+            className="h-screen w-full flex justify-center items-center"
+          >
             <Title>Les Prompts</Title>
           </div>
-          <div className="h-screen flex flex-col w-full">
+          <div
+            ref={(el) => (sectionRefs.current[3] = el)}
+            className="h-screen flex flex-col w-full"
+          >
             <Title blur={selected !== ""} className={"text-3xl font-black"}>
               Composition
             </Title>
@@ -146,7 +216,10 @@ const Research = () => {
               </DropHoverLine>
             </div>
           </div>
-          <div className="h-screen flex flex-col w-full">
+          <div
+            ref={(el) => (sectionRefs.current[4] = el)}
+            className="h-screen flex flex-col w-full"
+          >
             <Title blur={selected !== ""} className={"text-3xl font-black"}>
               Compréhension
               <br />

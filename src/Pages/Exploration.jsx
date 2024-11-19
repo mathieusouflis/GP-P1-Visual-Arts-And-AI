@@ -96,7 +96,7 @@ const Exploration = () => {
       id: "001",
       ia: "NightCafe",
       prompt:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet atque vero voluptates unde consequatur officia iure non sit saepe amet?",
+        "Tony Stark wearing a black suit, sitting at his desk in his office. An Iron Man helmet is placed next to him on the desk. Behind him, a large blue holographic screen displays J.A.R.V.I.S., adding a technological and futuristic atmosphere. The scene is in a modern cartoonish style, with clean lines, vibrant colors, and detailed elements similar to modern cartoon",
       clicable: true,
       imageId: 1,
     },
@@ -114,7 +114,7 @@ const Exploration = () => {
       id: "003",
       ia: "NightCafe",
       prompt:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet atque vero voluptates unde consequatur officia iure non sit saepe amet?",
+        "An Iron Man helmet, damaged and partially disassembled, resting on a cluttered workbench in a workshop. Various mechanical parts, tools, wires, and electronic components are scattered around. The interior of the helmet is visible, showing exposed circuits and gears. The lighting is soft, casting shadows across the desk, creating a nighttime, meticulous work atmosphere. The style is detailed and realistic, with slightly saturated colors for an immersive effect",
       clicable: true,
       imageId: 3,
     },
@@ -123,7 +123,7 @@ const Exploration = () => {
       id: "004",
       ia: "KlingAI",
       prompt:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet atque vero voluptates unde consequatur officia iure non sit saepe amet?",
+        "A realistic digital painting of Tony Stark, wearing a formal suit with a white shirt and tie, looking thoughtfully into the distance. His expression is serious and intense, with subtle details like a short beard and styled hair. The background is minimalist and blurred in gray tones, focusing attention on his facial features. The style is realistic with smooth shading and detailed textures, capturing a modern, polished look",
       clicable: true,
       imageId: 4,
     },
@@ -132,7 +132,7 @@ const Exploration = () => {
       id: "005",
       ia: "KlingAI",
       prompt:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet atque vero voluptates unde consequatur officia iure non sit saepe amet?",
+        "A close-up of an Iron Man helmet placed on a table in a high-rise, industrial-style room with large windows in the background. The metallic helmet reflects the soft daylight filtering through the windows, casting realistic reflections and shadows. The cityscape outside is slightly blurred, adding depth to the scene. The helmet’s surface shows detailed engravings and a mix of red, gold, and silver tones, emphasizing a polished, futuristic design. The overall atmosphere is calm and atmospheric, with a touch of realism",
       clicable: true,
       imageId: 5,
     },
